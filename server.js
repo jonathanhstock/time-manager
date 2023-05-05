@@ -1,10 +1,21 @@
 const express = require("express");
-const app = express();
-const port = 3001;
+var app = express();
+const port = 3000;
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
+//login
+app.get('/', (req, res) => { 
+  res.sendFile(__dirname + '/index.html'); 
 });
+
+//input schedule
+app.get('/schedule', (req,res) => {
+  res.sendFile(__dirname + '/schedule.html');
+})
+
+
+// app.get("/", (req, res) => {
+//   res.send("Hello World!");
+// });
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
